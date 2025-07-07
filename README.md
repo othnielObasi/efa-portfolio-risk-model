@@ -31,7 +31,7 @@ This project demonstrates how to extract **Market**, **Size**, and **Value** ris
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/Othnielobasi/efa-portfolio-risk-model.git
+git clone https://github.com/othnielObasi/efa-portfolio-risk-model.git
 cd efa-portfolio-risk-model
 ```
 
