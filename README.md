@@ -1,4 +1,3 @@
-# efa-portfolio
 # Exploratory Factor Analysis Portfolio Risk Model
 
 This project delivers a robust pipeline for uncovering latent **Market**, **Size**, and **Value** drivers through Exploratory Factor Analysis on stock excess returns, and demonstrates their explanatory power via portfolio regression.
