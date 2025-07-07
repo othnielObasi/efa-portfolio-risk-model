@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# !pip install factor_analyzer --quiet
 
 import pandas as pd
 from pandas_datareader import data as pdr
@@ -19,8 +18,7 @@ warnings.filterwarnings(
     category=FutureWarning
 )
 
-# (Optional) You can also silence all warnings, though this is less recommended:
-# warnings.filterwarnings("ignore")
+
 
 def main():
   # 1. Download monthly prices for stocks and risk-free proxy
@@ -35,7 +33,7 @@ def main():
 
   # 3. Fetch 3-month Treasury yield from FRED
   rf_yield = pdr.DataReader("DGS3MO", "fred", start="2015-01-01", end="2024-12-31")
-  rf_m = rf_yield.resample("ME").last().ffill() / 100  # from percent to decimal
+  rf_m = rf_yield.resample("ME").last().ffill() / 100  
 
   # 4. Convert discount yield to monthly holding-period return:
   #    HPR ≈ (1 - D/360 * days)⁻¹ - 1; for 91-day T-bill ≈ rf_m * (91/360)
@@ -48,8 +46,7 @@ def main():
   # 6. Standardize series
   scaler = StandardScaler()
   X = scaler.fit_transform(excess)
-  X = pd.DataFrame(X, index=excess.index, columns=excess.columns)  # :contentReference[oaicite:0]{index=0}
-
+  X = pd.DataFrame(X, index=excess.index, columns=excess.columns)
   #7 Determine optimal n_components via eigenvalues
 
   #7a Compute correlation matrix
